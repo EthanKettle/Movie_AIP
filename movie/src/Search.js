@@ -1,8 +1,20 @@
-import './scss/search.scss'
+const [search, setSearch] = useState('');
 
-export default function Search() {
+export default function Search({ onSearch }) {
 
   return (
-    <h1>Ethan working on Search component here</h1>
+    <>
+      <input 
+      placeholder="Search"
+      value={search}
+      onChange={e => setSearch(e.target.value)}
+      />
+      <button onClick={() => {
+      setSearch('');
+      query(search);
+      changePage(PAGE.SEARCH)
+      }}></button>
+    </>
   )
 }
+
