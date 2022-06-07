@@ -1,4 +1,4 @@
-for
+for (let i = 0; i < )
 
 export default function movieSearch({ changePage }) {
     return (
