@@ -1,26 +1,26 @@
 import Header from './header/Header';
+import BottomNav from './footer/BottomNav';
 import Search from './Search';
-import PAGE from './PAGES'
-import './css/App.css'
+import './css/App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Trending from './Trending';
 
 
 
 function App() {
-  const [page, setPage] = useState(PAGE.HOME);
-
-  const changePage = () => {
-    switch (page) {
-      case PAGE.HOME:
-      case PAGE.SEARCH:
-      case PAGE.PICK:
-    }
-
-  };
+  
 
   return (
     <div className="App">
-      <Header />
-      {/* <Search /> */}
+          <Router>
+            <Header />
+            <Routes>
+              <Route exact path='/' />
+              <Route path='/trending' element={<Trending />} />
+              <Route path='/search' element={<Search />}/>
+            </Routes>
+            <BottomNav />
+          </Router>
     </div>
   );
 }
