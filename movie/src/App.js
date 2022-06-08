@@ -1,4 +1,4 @@
-import Header from './Header';
+import Header from './header/Header';
 import Search from './Search';
 import PAGE from './PAGES'
 import './css/App.css'
@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Search />
+      {/* <Search /> */}
     </div>
   );
 }
