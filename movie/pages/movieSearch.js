@@ -8,10 +8,13 @@ function fetchSearch(query){
 function makeSearch(query){
   let HTML = `Search Results for ${query}`;
   for (let i = 0; i < page.results.length; i++) {
-      HTML =
-    `<div class="CardStyle">
+      HTML +=
+    `<div class="CardStyle" 
+      onClick={() => {
+      changePage(pick/${page.results[i]})
+      }}>
       <div class="movieImg">
-        ${page.results[i].vote_average.poster_path}
+        ${page.results[i].poster_path}
       </div>
       <div class="info">
         <p class="rating">${page.results[i].vote_average}</p>

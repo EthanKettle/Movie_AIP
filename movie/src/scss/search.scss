@@ -1,4 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
+.cardStyle {
+  width: 120px;
+  text-align: justify;
+  img {
+    width: 100px;
+  }
+
+}
 
 h1 {
   color: blue;

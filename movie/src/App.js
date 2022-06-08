@@ -1,28 +1,41 @@
 import Header from './header/Header';
 import Search from './Search';
-import PAGE from './PAGES'
 import './css/App.css'
+import {BrowserRouter as Router} from 'react-router-dom'
 
 
 
 function App() {
-  const [page, setPage] = useState(PAGE.HOME);
-
-  const changePage = () => {
-    switch (page) {
-      case PAGE.HOME:
-      case PAGE.SEARCH:
-      case PAGE.PICK:
-    }
-
-  };
+  
 
   return (
+    <Router>
+      <Route path="/" render={() => <Home />}>
+      </Route>
+      <Route path="/search/:query" compontent={SearchPage}>
+      </Route>
+      <Route path="/pick/:movie" compontent={Pick}>
+      </Route>
+    </Router> 
+    
+  );
+
+  function Home() {
     <div className="App">
       <Header />
-      {/* <Search /> */}
+      {<Search />}
     </div>
-  );
+  }
+
+  function SearchPage() {
+
+  }
+
+  function Pick() {
+
+  }
 }
+
+
 
 export default App;
