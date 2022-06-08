@@ -1,6 +1,9 @@
-const [search, setSearch] = useState('');
+import React, {useState} from 'react';
+import './scss/search.scss';
+
 
 export default function Search({ onSearch }) {
+  const [search, setSearch] = useState('');
 
   return (
     <>
@@ -11,9 +14,9 @@ export default function Search({ onSearch }) {
       />
       <button onClick={() => {
       setSearch('');
-      query(search);
-      changePage(`search/${query}`)
-      }}></button>
+      // query(search);
+      // changePage(`search/${query}`)
+      }}>Search</button>
     </>
   )
 }
