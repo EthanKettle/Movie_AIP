@@ -12,7 +12,7 @@ export default function Search({ onSearch }) {
       <button onClick={() => {
       setSearch('');
       query(search);
-      changePage(PAGE.SEARCH)
+      changePage(`search/${query}`)
       }}></button>
     </>
   )
