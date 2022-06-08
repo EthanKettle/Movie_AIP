@@ -6,12 +6,24 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Trending from './Trending';
 
 
-
 function App() {
   
 
   return (
+    <Router>
+      <Route path="/" render={() => <Home />}>
+      </Route>
+      <Route path="/search/:query" compontent={SearchPage}>
+      </Route>
+      <Route path="/pick/:movie" compontent={Pick}>
+      </Route>
+    </Router> 
+    
+  );
+
+  function Home() {
     <div className="App">
+
           <Router>
             <Header />
             <Routes>
@@ -21,8 +33,22 @@ function App() {
             </Routes>
             <BottomNav />
           </Router>
+
+//       <Header />
+//       {<Search />}
+
     </div>
-  );
+  }
+
+  function SearchPage() {
+
+  }
+
+  function Pick() {
+
+  }
 }
+
+
 
 export default App;
