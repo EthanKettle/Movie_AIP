@@ -6,7 +6,7 @@ function fetchSearch(query){
 }
 
 function makeSearch(query){
-  let HTML = `Search Results for ${query}`;
+  let HTML = `<h1>Search Results for ${query}</h1><div>`;
   for (let i = 0; i < page.results.length; i++) {
       HTML +=
     `<div class="CardStyle" 
@@ -23,6 +23,7 @@ function makeSearch(query){
       </div>
     </div>`;
   }
+  HTML += `</div>`
 }
 
 export default function movieSearch({ changePage }) {
