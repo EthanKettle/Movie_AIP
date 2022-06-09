@@ -7,7 +7,12 @@ import Trending from './Trending';
 
 function App() {
 
+  const parentToChild = (data) => {
+    data.results.forEach(({id, title, poster_path, vote_average, release_date, overview}) => {
 
+    })
+  }
+  
   return (
     <div className="App">
           <Router>
@@ -15,7 +20,7 @@ function App() {
             <Routes>
               <Route exact path='/' />
               <Route path='/trending' element={<Trending />} />
-              <Route path='/search' element={<Search />}/>
+              <Route path='/search' element={<Search getResults={parentToChild}/>}/>
             </Routes>
             <BottomNav />
           </Router>
