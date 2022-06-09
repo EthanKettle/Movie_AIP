@@ -1,7 +1,10 @@
+import React, { useState } from 'react';
 import './scss/trending.scss'
 
 
+
 export default function Trending() {
+  const [cards, setCards] = useState('');
   const key = '6b9f844777c1c7871dcdef89004ab36e';
   let url = `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`;
   fetch(url)

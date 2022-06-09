@@ -1,6 +1,8 @@
 
 
 .trending {
+  display: flex;
+  flex-wrap: wrap;
   width: 90vw;
   height: 80vh;
   border: 5px solid maroon;
