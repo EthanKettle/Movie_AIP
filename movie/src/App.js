@@ -34,8 +34,8 @@ function App() {
             <BottomNav />
           </Router>
 
-//       <Header />
-//       {<Search />}
+{/* //       <Header />
+//       {<Search />} */}
 
     </div>
   }

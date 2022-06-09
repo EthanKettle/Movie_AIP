@@ -13,5 +13,5 @@ export default function moviepick(movie) {
                 <div>Revenue: ${movie.revenue}</div>
             </div>
     </div>
-    );
-  }
+  );
+}
