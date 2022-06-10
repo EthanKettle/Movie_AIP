@@ -5,12 +5,12 @@ import './css/App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Trending from './Trending';
 
+
+
 function App() {
 
   const parentToChild = (data) => {
-    data.results.forEach(({id, title, poster_path, vote_average, release_date, overview}) => {
-
-    })
+    
   }
   
   return (
