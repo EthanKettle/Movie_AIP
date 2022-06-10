@@ -10,6 +10,7 @@ export default function Search({getResults}) {
     const data = await response.json()
     getResults(data)
   }
+  
   return (
     <>
       <input 
@@ -22,29 +23,8 @@ export default function Search({getResults}) {
       }}>Search
       </button>
       <div className='searchResults'>
-
+        <madeSearch />
       </div>
     </>
   )
 }
-
-
-// function makeSearch(searchInput){
-//   let HTML = `Search Results for ${query}`;
-//   for (let i = 0; i < page.results.length; i++) {
-//       HTML +=
-//     `<div class="CardStyle" 
-//       onClick={() => {
-//       changePage(pick/${page.results[i]})
-//       }}>
-//       <div class="movieImg">
-//         ${page.results[i].poster_path}
-//       </div>
-//       <div class="info">
-//         <p class="rating">${page.results[i].vote_average}</p>
-//         <span class="name">${page.results[i].title}</span>
-//         <p class="date">${page.results[i].release_date}</p>
-//       </div>
-//     </div>`;
-//   }
-// }

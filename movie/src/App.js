@@ -20,6 +20,12 @@ function App() {
     })
   }
 
+function App() {
+
+  const parentToChild = (data) => {
+    
+  }
+  
   return (
     <div className="App">
           <Router>
