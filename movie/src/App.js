@@ -19,6 +19,7 @@ function App() {
             </li>
     })
   }
+}
 
 function App() {
 
