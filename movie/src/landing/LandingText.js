@@ -1,4 +1,4 @@
-import '../scss/LandingText.scss';
+import '../scss/landingText.scss';
 
 export default function LandingText() {
 
