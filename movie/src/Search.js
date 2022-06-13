@@ -23,7 +23,7 @@ export default function Search({getResults}) {
       }}>Search
       </button>
       <div className='searchResults'>
-        <madeSearch />
+        <movieData />
       </div>
     </>
   )

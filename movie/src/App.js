@@ -12,34 +12,32 @@ function App() {
   const getResults = (data) => {
     const movieInfo = data.results;
     setDisplay(movieInfo)
-    const movieData = data.results.map(({id, title, backdrop_path, poster_path, popularity, release_date, overview}) => {
-      return <li key={id}>
-                <img className='movieImage' alt={title}>{poster_path}</img>
-                
-            </li>
-    })
-  }
-}
-
-function App() {
-
-  const parentToChild = (data) => {
     
   }
-  
+
+  const movieData = searchResultsDisplay.map(({id, title, backdrop_path, poster_path, popularity, release_date, overview}) => {
+    console.log(poster_path)
+    return <li key={id} class="cardStyle ">
+              <img src={'https://image.tmdb.org/t/p/original' + poster_path} className='movieImage' alt={title}></img>
+              <p>{title}</p>
+              <p>{popularity}</p>
+              <p>{release_date}</p>
+          </li>
+  })
+console.log(searchResultsDisplay);
   return (
+    
     <div className="App">
           <Router>
             <Header />
             <Routes>
               <Route exact path='/' />
               <Route path='/trending' element={<Trending />} />
-              <Route path='/search' element={<Search getResults={getResults}/>}/>
+              <Route path="/search" element={<><Search getResults={getResults} />{movieData}</>} />   
             </Routes>
             <BottomNav />
           </Router>
     </div>
   );
 }
-
 export default App;
