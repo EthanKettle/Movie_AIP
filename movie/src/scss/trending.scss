@@ -1,9 +1,48 @@
 
 
-.trending {
+h1 {
+  margin: 0 auto;
+  font-size: 5em;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.trendingContainer {
   display: flex;
   flex-wrap: wrap;
   width: 90vw;
   height: 80vh;
-  border: 5px solid maroon;
+
+  .movieCard {
+    height: 16em;
+    width: auto;
+    margin: .5em;
+
+    // .imageOverlay {
+    //   height: 15em;
+    //   width: auto;
+    //   border-radius: .7em;
+    //   background-color: grey;
+    //   opacity: 70%;
+    //   z-index: 2;
+    // }
+  
+    .movieImage {
+      height: 15em;
+      width: auto;
+      border-radius: .7em;
+    }
+
+    &:hover {
+      .movieImage {
+        cursor: pointer;
+        height: 15.4em;
+      }
+    }
+    @media (hover: none) {
+      .iconImage {
+        display: block;
+      }
+    }
+  }
 }
