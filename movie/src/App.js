@@ -7,37 +7,57 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Trending from './Trending';
 
 function App() {
+  const singleMovieView = (id) => {
+    console.log(id)
+  }
+
   const [searchResultsDisplay, setDisplay] = useState([]);
-  // 1) Variable containing needed data 2) Setting state to that variable 3) Using state to render JSX
   const getResults = (data) => {
     const movieInfo = data.results;
     setDisplay(movieInfo)
-    
-  }
 
+  }
+  
   const movieData = searchResultsDisplay.map(({id, title, backdrop_path, poster_path, popularity, release_date, overview}) => {
-    console.log(poster_path)
-    return <li key={id} class="cardStyle ">
+    return <div onClick={singleMovieView(id)} className='movieCard' key={id}>
               <img src={'https://image.tmdb.org/t/p/original' + poster_path} className='movieImage' alt={title}></img>
-              <p>{title}</p>
-              <p>{popularity}</p>
-              <p>{release_date}</p>
-          </li>
+          </div>
   })
-console.log(searchResultsDisplay);
+
+  const [trendingDisplay, setTrendingDisplay] = useState([]);
+  const getTrending = (data) => {
+    console.log(data)
+    const movieInfo = data.results;
+    setTrendingDisplay(movieInfo)
+  }
+  const trendingMovieData = trendingDisplay.map(({id, title, backdrop_path, poster_path, popularity, release_date, overview}) => {
+    return <div onClick={singleMovieView(id)} className='movieCard' key={id}>
+            <div className='imageOverlay'></div>
+            <img src={'https://image.tmdb.org/t/p/original' + poster_path} className='movieImage' alt={title}></img>
+          </div>
+  })
+
   return (
     
     <div className="App">
           <Router>
             <Header />
-            <Routes>
-              <Route exact path='/' />
-              <Route path='/trending' element={<Trending />} />
-              <Route path="/search" element={<><Search getResults={getResults} />{movieData}</>} />   
-            </Routes>
+
+            <div className='searchContainer'>
+              <Routes>
+                <Route exact path='/' />
+                <Route path='/trending' element={<><Trending getTrending={getTrending}/><div className='trendingContainer'>{trendingMovieData}</div></>} />
+                <Route path='/search' element={<><Search getResults={getResults}/><div className='movieCardContainer'>{movieData}</div></>} />
+              </Routes>
+            </div>
             <BottomNav />
           </Router>
     </div>
   );
 }
+
+
 export default App;
+
+// Adding page for each movie - Click in to each movie.
+// 

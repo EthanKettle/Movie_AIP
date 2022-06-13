@@ -10,21 +10,18 @@ export default function Search({getResults}) {
     const data = await response.json()
     getResults(data)
   }
-  
   return (
-    <>
+    <div className='searchAndButton'>
       <input 
       placeholder="Search"
       value={query}
       onChange={e => setQuery(e.target.value)}
       />
-      <button onClick={() => {
+      <button className='searchButton' onClick={() => {
         ApiCall(query)
       }}>Search
       </button>
-      <div className='searchResults'>
-        <movieData />
-      </div>
-    </>
+
+    </div>
   )
 }

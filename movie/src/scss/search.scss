@@ -4,26 +4,45 @@
   box-sizing: border-box;
 }
 
-.cardStyle {
-  width: 120px;
-  text-align: justify;
-  img {
-    width: 100px;
-  }
-
-}
-
 input {
   width: 40em;
   height: 3em;
   border-radius: .9em;
 }
 
-.searchResults {
+.searchContainer {
+  width: 90vw;
+  height: 90vh;
   display: flex;
   flex-wrap: wrap;
-  width: 90vw;
-  height: auto;
-  min-height: 70vh;
-  border: 5px solid maroon;
+
+  .searchAndButton {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .movieCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+
+    .movieCard {
+      height: 16em;
+      width: auto;
+      margin: .5em;
+    
+      .movieImage {
+        height: 15em;
+        width: auto;
+        border-radius: .7em;
+      }
+    }
+  }
+
+
+  .searchButton {
+    height: 3em;
+    width: 6em;
+  }
+
 }
