@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import '../scss/landingMovies.scss'
 const key = '6b9f844777c1c7871dcdef89004ab36e';
 
-export default function Trending({getTrending}) {
-  const [cards, setCards] = useState('');
+export default function LandingMovies({getLandingMovies}) {
   async function ApiCall() {
-    let url = `https://api.themoviedb.org/3/movie/latest?api_key=${key}&language=en-US`;
+    let url = `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`;
     const response = await fetch(url)
     const data = await response.json()
-    console.log(data)
-    getTrending(data)
+    getLandingMovies(data)
   }
 
   useEffect(() => {
-    console.log("executed only once!");
     ApiCall();
   }, [""]);
 
   return (
-      <h1>Most Recent Movies</h1>
+    <h1>Landing movies here</h1>
   )
 }

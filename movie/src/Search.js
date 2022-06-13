@@ -21,7 +21,6 @@ export default function Search({getResults}) {
         ApiCall(query)
       }}>Search
       </button>
-
     </div>
   )
 }
